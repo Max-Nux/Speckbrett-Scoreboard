@@ -1,0 +1,143 @@
+body {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    text-align: center;
+    margin: 50px;
+
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+}
+
+.background-container {
+    background-color: #1e1f21;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    padding: 50px;
+    max-width: 650px;
+    max-height: 360px;
+    border-radius: 20px;
+}
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.player-name {
+    font-size: 35px;
+}
+
+.player {
+    border: none;
+    color: #04e487;
+    padding: 20px;
+    border-radius: 10px;
+    width: 150px;
+    transition: transform 0.3s ease-in-out;
+    background-color: #2e2f31;
+}
+
+.score {
+    font-size: 3.2em;
+    font-weight: bold;
+    margin: 10px 0;
+    transition: color 0.3s ease-in-out;
+    color: white;
+    cursor: default;
+}
+
+button, .rules-btn {
+    font-size: 1.75em;
+    font-weight: bold;
+    margin: 15px;
+    padding: 5px 10px;
+    width: 40px;
+    border-radius: 10px;
+    color: #1e1f21;
+    background-color: #04e487;
+    border: none;
+    cursor: pointer;
+    transition: ease .5s;
+}
+
+button:hover, .rules-btn:hover {
+    background-color: #1e1f21;
+    color: #04e487;
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+.reset-button {
+    border: 3px solid #04e487;
+    background-color:  #1e1f21;
+    color: #04e487;
+    width: 110px;
+    height: 110px;
+    align-self: center;
+    transition: .75s;
+    margin-left: 22px;
+    margin-top: 80px;
+}
+.reset-button:hover {
+    background-color:  #04e487;
+    color: #1e1f21; 
+}
+
+.rules-btn {
+    font-size: 1.5em;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-decoration: none;
+    border: 3px solid #04e487;
+    background-color:  #1e1f21;
+    color: #04e487;
+    width: 90px;
+    height: 40px;
+    align-self: center;
+    margin-left: 26px;
+}
+.rules-btn:hover {
+    background-color:  #04e487;
+    color: #1e1f21; 
+     
+}
+
+.set-counter {
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    gap: 5px;
+    margin-left: 43px;
+}
+
+.set-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.set-circle.filled {
+    background-color: #04e487;
+}
+
+.winner {
+    font-size: 1.5em;
+    color: #04e487;
+    margin-top: 20px;
+}
+
+.active {
+    background-color: #3e3f41;
+    transform: scale(1.1);
+}
+
+.serve-indicator {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: white;
+}
