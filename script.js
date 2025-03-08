@@ -115,6 +115,8 @@ function resetGame() {
     currentServer = "player1";
     document.getElementById("player1").classList.add("active");
     document.getElementById("player2").classList.remove("active");
+    updateServeIndicatorForPlayer2();
+    updateServeIndicatorForPlayer1();
 }
 function fullResetGame() {
     document.getElementById("score1").innerText = "0";
@@ -135,6 +137,8 @@ function fullResetGame() {
     currentServer = "player1";
     document.getElementById("player1").classList.add("active");
     document.getElementById("player2").classList.remove("active");
+    updateServeIndicatorForPlayer2();
+    updateServeIndicatorForPlayer1(); 
 }
 
 // Initialisierung beim Laden der Seite
