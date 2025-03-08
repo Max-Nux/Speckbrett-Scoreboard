@@ -4,7 +4,9 @@ body {
     font-style: normal;
     text-align: center;
     user-select: none;
-    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     height: 100vh;
     background-color: #485461;
@@ -19,8 +21,6 @@ body {
     max-width: 650px;
     max-height: 360px;
     border-radius: 20px;
-    margin-left: 140px;
-    margin-top: 110px;
     transform: scale(1.25);
 }
 .scoreboard {
