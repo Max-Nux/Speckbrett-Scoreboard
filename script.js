@@ -34,7 +34,7 @@ function updateScore(scoreId, opponentId, change, scorer) {
     }
 
     if (score >= 21 && (score - opponentScore) >= 2) {
-        document.getElementById("winner").innerText = scoreId === "score1" ? "Simon hat den Satz gewonnen!" : "Max hat den Satz gewonnen!";
+        document.getElementById("winner").innerText = scoreId === "score1" ? "Spieler 1 hat den Satz gewonnen!" : "Spieler 2 hat den Satz gewonnen!";
         disableButtons();
 
         if (scoreId === "score1") {
@@ -46,7 +46,10 @@ function updateScore(scoreId, opponentId, change, scorer) {
         }
 
         if (setCounts.player1 === 2 || setCounts.player2 === 2) {
-            document.getElementById("winner").innerText = scoreId === "score1" ? "Simon hat das Spiel gewonnen!" : "Max hat das Spiel gewonnen!";
+            document.getElementById("winner").innerText = scoreId === "score1" ? "Spieler 1 hat das Spiel gewonnen!" : "Spieler 2 hat das Spiel gewonnen!";
+            setTimeout(() => {
+                fullResetGame();
+            }, 4000);
         } else {
             setTimeout(() => {
                 resetGame();
@@ -109,6 +112,26 @@ function resetGame() {
     document.getElementById("winner").innerText = "";
     let buttons = document.querySelectorAll("button");
     buttons.forEach(button => button.disabled = false);
+    currentServer = "player1";
+    document.getElementById("player1").classList.add("active");
+    document.getElementById("player2").classList.remove("active");
+}
+function fullResetGame() {
+    document.getElementById("score1").innerText = "0";
+    document.getElementById("score2").innerText = "0";
+    document.getElementById("winner").innerText = "";
+    let buttons = document.querySelectorAll("button");
+    buttons.forEach(button => button.disabled = false);
+
+    
+    // Setze die Satzzähler zurück
+    setCounts.player1 = 0;
+    setCounts.player2 = 0;
+
+    // Aktualisiere die Anzeige der Satzzähler
+    updateSetCounter("player1", setCounts.player1);
+    updateSetCounter("player2", setCounts.player2);
+
     currentServer = "player1";
     document.getElementById("player1").classList.add("active");
     document.getElementById("player2").classList.remove("active");
