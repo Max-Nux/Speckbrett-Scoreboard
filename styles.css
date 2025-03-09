@@ -23,12 +23,12 @@ body {
     border-radius: 20px;
     transform: scale(1.25);
 }
+
 .scoreboard {
     display: flex;
     justify-content: center;
     gap: 50px;
 }
-
 
 .player {
     border: none;
@@ -36,8 +36,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     width: 150px;
-    transition: transform 0.3s ease-in-out;
     background-color: #2e2f31;
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Stil für die Spielernamen-Inputs */
@@ -161,6 +161,7 @@ button:hover, .rules-btn:hover {
     font-size: 1.5em;
     color: #04e487;
     margin-top: 20px;
+    margin-bottom: 0;
 }
 
 .active {

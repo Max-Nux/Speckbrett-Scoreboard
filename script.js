@@ -4,7 +4,18 @@ let setCounts = { player1: 0, player2: 0 }; // Zähler für gewonnene Sätze
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("player1").classList.add("active");
     updateServeIndicatorForPlayer1();
+
+    // Wiederherstellen der gespeicherten Spielernamen
+    let player1Name = localStorage.getItem('player1-name') || "Spieler 1";
+    let player2Name = localStorage.getItem('player2-name') || "Spieler 2";
+    document.querySelector('#player1 .player-name').value = player1Name;
+    document.querySelector('#player2 .player-name').value = player2Name;
 });
+
+function updatePlayerName(playerId, newName) {
+    // Speichere den neuen Namen im localStorage
+    localStorage.setItem(playerId + '-name', newName);
+}
 
 function updateScore(scoreId, opponentId, change, scorer) {
     let scoreElement = document.getElementById(scoreId);
@@ -34,7 +45,12 @@ function updateScore(scoreId, opponentId, change, scorer) {
     }
 
     if (score >= 21 && (score - opponentScore) >= 2) {
-        document.getElementById("winner").innerText = scoreId === "score1" ? "Spieler 1 hat den Satz gewonnen!" : "Spieler 2 hat den Satz gewonnen!";
+        // Gewinnnachricht mit dem Namen des Spielers
+        let winnerName = scoreId === "score1" 
+            ? document.querySelector('#player1 .player-name').value 
+            : document.querySelector('#player2 .player-name').value;
+        
+        document.getElementById("winner").innerText = `${winnerName} hat den Satz gewonnen!`;
         disableButtons();
 
         if (scoreId === "score1") {
@@ -46,7 +62,8 @@ function updateScore(scoreId, opponentId, change, scorer) {
         }
 
         if (setCounts.player1 === 2 || setCounts.player2 === 2) {
-            document.getElementById("winner").innerText = scoreId === "score1" ? "Spieler 1 hat das Spiel gewonnen!" : "Spieler 2 hat das Spiel gewonnen!";
+            // Gewinnnachricht für das gesamte Spiel
+            document.getElementById("winner").innerText = `${winnerName} hat das Spiel gewonnen!`;
             setTimeout(() => {
                 fullResetGame();
             }, 4000);
@@ -106,25 +123,6 @@ function updateSetCounter(playerId, setCount) {
     });
 }
 
-function updatePlayerName(playerId, newName) {
-    // Speichere den neuen Namen in einem Datenobjekt oder direkt im DOM
-    let playerElement = document.getElementById(playerId);
-    let nameInput = playerElement.querySelector('.player-name');
-    nameInput.value = newName;
-
-    // Optional: Speichere den Namen in localStorage, um ihn bei einem Neuladen der Seite beizubehalten
-    localStorage.setItem(playerId + '-name', newName);
-}
-
-// Beim Laden der Seite die gespeicherten Namen wiederherstellen
-document.addEventListener("DOMContentLoaded", () => {
-    let player1Name = localStorage.getItem('player1-name') || "Spieler 1";
-    let player2Name = localStorage.getItem('player2-name') || "Spieler 2";
-
-    document.querySelector('#player1 .player-name').value = player1Name;
-    document.querySelector('#player2 .player-name').value = player2Name;
-});
-
 function resetGame() {
     document.getElementById("score1").innerText = "0";
     document.getElementById("score2").innerText = "0";
@@ -137,6 +135,7 @@ function resetGame() {
     updateServeIndicatorForPlayer2();
     updateServeIndicatorForPlayer1();
 }
+
 function fullResetGame() {
     document.getElementById("score1").innerText = "0";
     document.getElementById("score2").innerText = "0";
@@ -144,7 +143,6 @@ function fullResetGame() {
     let buttons = document.querySelectorAll("button");
     buttons.forEach(button => button.disabled = false);
 
-    
     // Setze die Satzzähler zurück
     setCounts.player1 = 0;
     setCounts.player2 = 0;
@@ -157,10 +155,5 @@ function fullResetGame() {
     document.getElementById("player1").classList.add("active");
     document.getElementById("player2").classList.remove("active");
     updateServeIndicatorForPlayer2();
-    updateServeIndicatorForPlayer1(); 
+    updateServeIndicatorForPlayer1();
 }
-
-// Initialisierung beim Laden der Seite
-document.getElementById("player1").classList.add("active");
-updateServeIndicatorForPlayer2();
-updateServeIndicatorForPlayer1();
