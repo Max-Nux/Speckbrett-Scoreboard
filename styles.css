@@ -29,9 +29,6 @@ body {
     gap: 50px;
 }
 
-.player-name {
-    font-size: 35px;
-}
 
 .player {
     border: none;
@@ -41,6 +38,36 @@ body {
     width: 150px;
     transition: transform 0.3s ease-in-out;
     background-color: #2e2f31;
+}
+
+/* Stil für die Spielernamen-Inputs */
+.player-name {
+    font-size: 35px;
+    border: none;
+    background: none;
+    color: #04e487;
+    text-align: center;
+    outline: none;
+    width: 100%;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.player-name:focus {
+    border-bottom: 2px solid #a8a8a8; /* Unterstreichen beim Bearbeiten */
+    color: #a8a8a8;
+}
+
+.player-name:hover {
+    transform: scale(1.05);/* Größe beim Darüberfahren mit der Maus */
+}
+
+/* Stil für die Inputs, wenn sie nicht im Fokus sind */
+.player-name:not(:focus) {
+    border-bottom: 2px solid transparent; /* Unsichtbare Unterstreichung */
 }
 
 .score {

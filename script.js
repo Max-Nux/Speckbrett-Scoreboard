@@ -106,6 +106,25 @@ function updateSetCounter(playerId, setCount) {
     });
 }
 
+function updatePlayerName(playerId, newName) {
+    // Speichere den neuen Namen in einem Datenobjekt oder direkt im DOM
+    let playerElement = document.getElementById(playerId);
+    let nameInput = playerElement.querySelector('.player-name');
+    nameInput.value = newName;
+
+    // Optional: Speichere den Namen in localStorage, um ihn bei einem Neuladen der Seite beizubehalten
+    localStorage.setItem(playerId + '-name', newName);
+}
+
+// Beim Laden der Seite die gespeicherten Namen wiederherstellen
+document.addEventListener("DOMContentLoaded", () => {
+    let player1Name = localStorage.getItem('player1-name') || "Spieler 1";
+    let player2Name = localStorage.getItem('player2-name') || "Spieler 2";
+
+    document.querySelector('#player1 .player-name').value = player1Name;
+    document.querySelector('#player2 .player-name').value = player2Name;
+});
+
 function resetGame() {
     document.getElementById("score1").innerText = "0";
     document.getElementById("score2").innerText = "0";
