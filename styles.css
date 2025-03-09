@@ -83,7 +83,6 @@ button:hover, .rules-btn:hover {
     height: 110px;
     align-self: center;
     transition: .75s;
-    margin-left: 22px;
     margin-top: 80px;
 }
 .reset-button:hover {
@@ -103,7 +102,7 @@ button:hover, .rules-btn:hover {
     width: 90px;
     height: 40px;
     align-self: center;
-    margin-left: 26px;
+    margin-left: 18px;
 }
 .rules-btn:hover {
     background-color:  #04e487;
