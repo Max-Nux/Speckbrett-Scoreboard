@@ -197,7 +197,7 @@ button:hover, .rules-btn:hover {
   and (orientation: landscape)  {
     
     .background-container {
-        transform: scale(0.8);
+        transform: scale(0.75);
     }
     
 }
