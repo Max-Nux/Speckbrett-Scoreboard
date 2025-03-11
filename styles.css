@@ -181,7 +181,8 @@ button:hover, .rules-btn:hover {
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait)  {
     
     .background-container {
         transform: scale(0.5);
@@ -191,8 +192,9 @@ button:hover, .rules-btn:hover {
 
 @media only screen 
   and (min-device-width: 650px) 
-  and (max-device-width: 1050px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+  and (max-device-width: 1000px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape)  {
     
     .background-container {
         transform: scale(0.8);
