@@ -192,7 +192,7 @@ button:hover, .rules-btn:hover {
 
 @media only screen 
   and (min-device-width: 650px) 
-  and (max-device-width: 1050px)
+  and (max-device-width: 1100px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape)  {
     
