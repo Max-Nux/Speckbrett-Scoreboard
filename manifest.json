@@ -1,0 +1,10 @@
+{
+    "name": "Speckbrett Score",
+    "short_name": "Speckbrett",
+    "theme_color": "#04e487",
+    "background_color": "#2e2f31",
+    "display": "fullScreen",
+    "orientation": "landscape",
+    "scope": "/",
+    "start_url": "/"
+  }
