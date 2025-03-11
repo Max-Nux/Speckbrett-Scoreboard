@@ -177,3 +177,25 @@ button:hover, .rules-btn:hover {
     margin-top: 10px;
     color: white;
 }
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    
+    .background-container {
+        transform: scale(0.5);
+    }
+    
+}
+
+@media only screen 
+  and (min-device-width: 650px) 
+  and (max-device-width: 1000px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    
+    .background-container {
+        transform: scale(0.8);
+    }
+    
+}
