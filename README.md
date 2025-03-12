@@ -1,6 +1,6 @@
 # Speckbrett Scoreboard
 
-Dieses Projekt ist eine simple Webseite, die ein Scoreboard für ein Speckbrett Spiel ist. Die Webseite ermöglicht es, die Punktstände der Spieler zu aktualisieren, die Aufschlags position anzuzeigen und den Gewinner eines Satzes oder des gesamten Spiels zu bestimmen. Die Webseite ist  responsiv und nur für die Nutzung auf allen Geräten optimiert.
+Dieses Projekt ist eine simple Webseite, die ein Scoreboard für ein Speckbrett Spiel ist. Die Webseite ermöglicht es, die Punktstände der Spieler zu aktualisieren, die Aufschlags position anzuzeigen und den Gewinner eines Satzes oder des gesamten Spiels zu bestimmen. Die Webseite ist  responsiv und für die Nutzung auf allen Geräten optimiert.
 
 ## Funktionen
 
