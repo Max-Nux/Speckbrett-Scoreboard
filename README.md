@@ -1,6 +1,6 @@
 # Speckbrett Scoreboard
 
-Dieses Projekt ist eine simple Webseite, die ein Scoreboard für ein Speckbrett Spiel ist. Die Webseite ermöglicht es, die Punktstände der Spieler zu aktualisieren, die Aufschlags position anzuzeigen und den Gewinner eines Satzes oder des gesamten Spiels zu bestimmen. Die Webseite ist  responsiv und für die Nutzung auf allen Geräten optimiert.
+Dieses Projekt ist eine progressive Web App, die ein Scoreboard für ein Speckbrett Spiel ist. Die PWA ermöglicht es, die Punktstände der Spieler zu aktualisieren, die Aufschlags position anzuzeigen und den Gewinner eines Satzes oder des gesamten Spiels zu bestimmen. Die PWA ist  responsiv und für die Nutzung auf allen Geräten optimiert.
 
 ## Funktionen
 
@@ -12,8 +12,8 @@ Dieses Projekt ist eine simple Webseite, die ein Scoreboard für ein Speckbrett 
 
 ## Technologien
 
-- **HTML**: Struktur der Webseite.
-- **CSS**: Styling der Webseite und Animationen.
+- **HTML**: Struktur der PWA.
+- **CSS**: Styling der PWA und Animationen, Sowie Responsive Design
 - **JavaScript**: Logik zur Aktualisierung der Punktstände, Aufschlaganzeige und Gewinnerermittlung.
 
 ## Installation
