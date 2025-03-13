@@ -63,3 +63,33 @@ li {
     background-color: #d32f2f;
     transform: scale(1.05);
 }
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait)  {
+    
+    .container{
+        max-width: 70%;
+        padding: 10px 50px 30px;
+        font-size: medium;
+        margin-top: none;
+    }
+    
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape)  {
+    
+    .container {
+        max-width: 70%;
+        padding: 10px 50px 30px;
+        font-size: medium;
+        margin-top: none;
+    }
+    
+}
