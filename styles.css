@@ -251,11 +251,11 @@ button:hover, .rules-btn:hover {
 
     .theme-switcher {
         transform: scale(0.5);
+        right: -165px;
     }
     .theme-switcher.active {
-        right: -50px;
+        right: -55px;
     }
-    
 }
 
 @media only screen 
@@ -269,11 +269,10 @@ button:hover, .rules-btn:hover {
     }
 
     .theme-switcher {
-        transform: scale(0.75);
+        transform: scale(0.5);
+        right: -165px;
     }
     .theme-switcher.active {
-        right: -25px;
-    }
-    
-    
+        right: -55px;
+    } 
 }
