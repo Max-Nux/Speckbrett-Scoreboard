@@ -1,6 +1,18 @@
 {
     "name": "Speckbrett Scoreborad",
     "short_name": "Speckbrett Score",
+    "icons": [
+   {
+      "src": "img/schlaeger512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+   },
+   {
+      "src": "img/schlaeger1024.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
+   }
+  ],
     "theme_color": "#1e1f21",
     "background_color": "#1e1f21",
     "display": "fullScreen",
