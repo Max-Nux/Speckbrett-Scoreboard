@@ -168,6 +168,17 @@ themeButtons.forEach(color =>{
     color.addEventListener('click', () =>{
         let dataColor= color.getAttribute('data-color')
         document.querySelector(':root').style.setProperty('--main-color',dataColor);
+
+          // Speichert die ausgewählte Farbe im localStorage
+          localStorage.setItem('selectedColor', dataColor);
     });
 
+});
+
+// Beim Laden der Seite die gespeicherte Farbe anwenden
+window.addEventListener('DOMContentLoaded', () => {
+    let savedColor = localStorage.getItem('selectedColor');
+    if (savedColor) {
+        document.querySelector(':root').style.setProperty('--main-color', savedColor);
+    }
 });
