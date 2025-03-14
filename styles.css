@@ -270,9 +270,9 @@ button:hover, .rules-btn:hover {
 
     .theme-switcher {
         transform: scale(0.75);
-        right: -200px;
+        right: -220px;
     }
     .theme-switcher.active {
-        right: -70px;
+        right: -71px;
     } 
 }
