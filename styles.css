@@ -269,10 +269,10 @@ button:hover, .rules-btn:hover {
     }
 
     .theme-switcher {
-        transform: scale(0.5);
-        right: -165px;
+        transform: scale(0.75);
+        right: -150px;
     }
     .theme-switcher.active {
-        right: -55px;
+        right: -35px;
     } 
 }
