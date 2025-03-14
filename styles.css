@@ -236,7 +236,7 @@ button:hover, .rules-btn:hover {
     transition: 0.3s;
 }
 .theme-buttons:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); 
 }
 
 @media only screen 
@@ -246,6 +246,10 @@ button:hover, .rules-btn:hover {
   and (orientation: portrait)  {
     
     .background-container {
+        transform: scale(0.5);
+    }
+
+    .theme-switcher {
         transform: scale(0.5);
     }
     
@@ -260,5 +264,10 @@ button:hover, .rules-btn:hover {
     .background-container {
         transform: scale(0.75);
     }
+
+    .theme-switcher {
+        transform: scale(0.75);
+    }
+    
     
 }

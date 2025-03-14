@@ -1,7 +1,7 @@
 {
     "name": "Speckbrett Scoreborad",
     "short_name": "Speckbrett Score",
-    "theme_color": "##1e1f21",
+    "theme_color": "#1e1f21",
     "background_color": "#1e1f21",
     "display": "fullScreen",
     "orientation": "landscape",
