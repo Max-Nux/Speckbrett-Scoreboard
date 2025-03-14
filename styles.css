@@ -252,6 +252,9 @@ button:hover, .rules-btn:hover {
     .theme-switcher {
         transform: scale(0.5);
     }
+    .theme-switcher.active {
+        right: -50px;
+    }
     
 }
 
@@ -267,6 +270,9 @@ button:hover, .rules-btn:hover {
 
     .theme-switcher {
         transform: scale(0.75);
+    }
+    .theme-switcher.active {
+        right: -25px;
     }
     
     
