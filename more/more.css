@@ -1,0 +1,124 @@
+body{
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    line-height: 1.6;
+    font-size: 20px;
+    color: #fff;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    background: linear-gradient(135deg, #111, #222);
+    padding: 10px 50px 50px 50px; 
+    border-radius: 45px 20px 45px 20px;
+    transition: 0.3s;
+    position: relative;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.button-container::after, .button-container::before {
+    content: "";
+    position: absolute;
+    height: 100%; width: 100%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    padding: 3px;    
+    border-radius: 45px 20px 45px 20px;
+    background-image: conic-gradient(from var(--angle), transparent 60%, #1F51FF);
+    z-index: -1;    
+
+    animation: 4s spin linear infinite;
+}
+.button-container::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+
+.container-line {
+    margin-left: 4%;
+    margin-top: 0;
+    margin-bottom: 40px;
+    width: 120px;
+    
+}
+a {
+    text-align: center;
+    margin: 10px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #1F51FF;
+    padding: 10px 70px;
+    border-radius: 8px;
+    transition: .3s;
+}
+a:hover {
+    background-color: #1a3ec1;
+    transform: scale(1.05);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.button-back {
+    background: #d10000;
+}
+.button-back:hover {
+    background: #a50000
+}
+
+
+.button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: 0.3s ease;
+  }
+  
+  .button span {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .button i {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Effekt beim Hover */
+  .button:hover span {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  .button:hover i {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
