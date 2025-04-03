@@ -1,5 +1,5 @@
 :root {
-    --main-color:#04e487;
+    --main-color: #04e487;
 }
 
 body {
@@ -61,14 +61,13 @@ body {
     transition: 0.3s ease-in-out;
 }
 
-
 .player-name:focus {
     border-bottom: 2px solid #a8a8a8; /* Unterstreichen beim Bearbeiten */
     color: #a8a8a8;
 }
 
 .player-name:hover {
-    transform: scale(1.05);/* Größe beim Darüberfahren mit der Maus */
+    transform: scale(1.05); /* Größe beim Darüberfahren mit der Maus */
 }
 
 /* Stil für die Inputs, wenn sie nicht im Fokus sind */
@@ -85,7 +84,8 @@ body {
     cursor: default;
 }
 
-button, .rules-btn {
+button,
+.rules-btn {
     font-size: 1.75em;
     font-weight: bold;
     margin: 15px;
@@ -96,10 +96,11 @@ button, .rules-btn {
     background-color: var(--main-color);
     border: none;
     cursor: pointer;
-    transition: ease .5s;
+    transition: ease 0.5s;
 }
 
-button:hover, .rules-btn:hover {
+button:hover,
+.rules-btn:hover {
     background-color: #1e1f21;
     color: var(--main-color);
 }
@@ -110,17 +111,17 @@ button:hover, .rules-btn:hover {
 }
 .reset-button {
     border: 3px solid var(--main-color);
-    background-color:  #1e1f21;
+    background-color: #1e1f21;
     color: var(--main-color);
     width: 110px;
     height: 110px;
     align-self: center;
-    transition: .75s;
+    transition: 0.75s;
     margin-top: 80px;
 }
 .reset-button:hover {
-    background-color:  var(--main-color);
-    color: #1e1f21; 
+    background-color: var(--main-color);
+    color: #1e1f21;
 }
 
 .rules-btn {
@@ -130,7 +131,7 @@ button:hover, .rules-btn:hover {
     padding-right: 5px;
     text-decoration: none;
     border: 3px solid var(--main-color);
-    background-color:  #1e1f21;
+    background-color: #1e1f21;
     color: var(--main-color);
     width: 90px;
     height: 40px;
@@ -138,9 +139,8 @@ button:hover, .rules-btn:hover {
     margin-left: 18px;
 }
 .rules-btn:hover {
-    background-color:  var(--main-color);
-    color: #1e1f21; 
-     
+    background-color: var(--main-color);
+    color: #1e1f21;
 }
 
 .set-counter {
@@ -183,7 +183,8 @@ button:hover, .rules-btn:hover {
 
 .theme-switcher {
     position: fixed;
-    top: 25px; right: -220px;
+    top: 25px;
+    right: -220px;
     width: 200px;
     padding: 10px;
     background: #1e1f21;
@@ -207,7 +208,8 @@ button:hover, .rules-btn:hover {
 
 .theme-switcher .switcher-btn {
     position: absolute;
-    top: 0; left: -75px;
+    top: 0;
+    left: -75px;
     color: var(--main-color);
     background: #1e1f21;
     padding: 10px 20px;
@@ -218,7 +220,6 @@ button:hover, .rules-btn:hover {
     z-index: 100;
 }
 
-
 .theme-switcher .theme-buttons-container {
     display: flex;
     flex-wrap: wrap;
@@ -227,24 +228,20 @@ button:hover, .rules-btn:hover {
 
 .theme-switcher .theme-buttons-container .theme-buttons {
     display: block;
-    height: 50px; width: 50px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     margin: 5px;
     cursor: pointer;
 }
-.theme-buttons{
+.theme-buttons {
     transition: 0.3s;
 }
 .theme-buttons:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait)  {
-    
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
     .background-container {
         transform: scale(0.5);
     }
@@ -258,12 +255,7 @@ button:hover, .rules-btn:hover {
     }
 }
 
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape)  {
-    
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
     .background-container {
         transform: scale(0.75);
     }
@@ -274,5 +266,5 @@ button:hover, .rules-btn:hover {
     }
     .theme-switcher.active {
         right: -40px;
-    } 
+    }
 }

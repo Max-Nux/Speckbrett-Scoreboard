@@ -1,72 +1,125 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scoreboard</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="img/schlaegerRound.png">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="img/schlaegerRound.png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/6a271c535e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/6a271c535e.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <link rel="manifest" href="manifest.json">
-</head>
-<body>
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
     <div class="theme-switcher">
-        <div class="switcher-btn">
-            <i class="fa-solid fa-bars"></i>
-        </div>
+      <div class="switcher-btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
 
-        <h3>Farbe Auswählen</h3>
+      <h3>Farbe Auswähle</h3>
 
-        <div class="theme-buttons-container">
-            <span class="theme-buttons" data-color="#FF6D00" style="background: #FF6D00;"></span> <!-- Orange -->
-            <span class="theme-buttons" data-color="#F8FF1F" style="background: #F8FF1F;"></span> <!-- Gelb -->
-            <span class="theme-buttons" data-color="#04e487" style="background: #04e487;"></span> <!-- Grün -->
-            <span class="theme-buttons" data-color="#1F51FF" style="background: #1F51FF;"></span> <!-- Blau -->
-            <span class="theme-buttons" data-color="#9D00FF" style="background: #9D00FF;"></span> <!-- Violett -->
-            <span class="theme-buttons" data-color="#db4be5" style="background: #db4be5;"></span> <!-- Magenta -->
-            
-        </div>
+      <div class="theme-buttons-container">
+        <span
+          class="theme-buttons"
+          data-color="#FF6D00"
+          style="background: #ff6d00"
+        ></span>
+        <!-- Orange -->
+        <span
+          class="theme-buttons"
+          data-color="#F8FF1F"
+          style="background: #f8ff1f"
+        ></span>
+        <!-- Gelb -->
+        <span
+          class="theme-buttons"
+          data-color="#04e487"
+          style="background: #04e487"
+        ></span>
+        <!-- Grün -->
+        <span
+          class="theme-buttons"
+          data-color="#1F51FF"
+          style="background: #1f51ff"
+        ></span>
+        <!-- Blau -->
+        <span
+          class="theme-buttons"
+          data-color="#9D00FF"
+          style="background: #9d00ff"
+        ></span>
+        <!-- Violett -->
+        <span
+          class="theme-buttons"
+          data-color="#db4be5"
+          style="background: #db4be5"
+        ></span>
+        <!-- Magenta -->
+      </div>
     </div>
-
 
     <div class="background-container">
-        <div class="scoreboard">
-            <div class="player" id="player1">
-                <input type="text" class="player-name" value="Spieler 1" onchange="updatePlayerName('player1', this.value)">
-                <div class="score" id="score1">0</div>
-                <p class="serve-indicator" id="serve1">⬅️ Linkes Feld</p>
-                <div class="set-counter">
-                    <div class="set-circle"></div>
-                    <div class="set-circle"></div>
-                </div>
-                <button onclick="updateScore('score1', 'player2', -1, 'player1')">-</button>
-                <button onclick="updateScore('score1', 'player2', 1, 'player1')">+</button>
-            </div>
-
-            <div class="button-container">
-                <button onclick="resetGame()" class="reset-button">Reset</button> <!-- Reset-Button -->
-                <a class="rules-btn" href="more/more.html">Mehr</a>
-            </div>
-
-            <div class="player" id="player2">
-                <input type="text" class="player-name" value="Spieler 2" onchange="updatePlayerName('player2', this.value)">
-                <div class="score" id="score2">0</div>
-                <p class="serve-indicator" id="serve2">⬅️ Linkes Feld</p>
-                <div class="set-counter">
-                    <div class="set-circle"></div>
-                    <div class="set-circle"></div>
-                </div>
-                <button onclick="updateScore('score2', 'player1', -1, 'player2')">-</button>
-                <button onclick="updateScore('score2', 'player1', 1, 'player2')">+</button>
-            </div>
+      <div class="scoreboard">
+        <div class="player" id="player1">
+          <input
+            type="text"
+            class="player-name"
+            value="Spieler 1"
+            onchange="updatePlayerName('player1', this.value)"
+          />
+          <div class="score" id="score1">0</div>
+          <p class="serve-indicator" id="serve1">⬅️ Linkes Feld</p>
+          <div class="set-counter">
+            <div class="set-circle"></div>
+            <div class="set-circle"></div>
+          </div>
+          <button onclick="updateScore('score1', 'player2', -1, 'player1')">
+            -
+          </button>
+          <button onclick="updateScore('score1', 'player2', 1, 'player1')">
+            +
+          </button>
         </div>
-        <p id="winner" class="winner"></p>
+
+        <div class="button-container">
+          <button onclick="resetGame()" class="reset-button">Reset</button>
+          <!-- Reset-Button -->
+          <a class="rules-btn" href="more/more.html">Mehr</a>
+        </div>
+
+        <div class="player" id="player2">
+          <input
+            type="text"
+            class="player-name"
+            value="Spieler 2"
+            onchange="updatePlayerName('player2', this.value)"
+          />
+          <div class="score" id="score2">0</div>
+          <p class="serve-indicator" id="serve2">⬅️ Linkes Feld</p>
+          <div class="set-counter">
+            <div class="set-circle"></div>
+            <div class="set-circle"></div>
+          </div>
+          <button onclick="updateScore('score2', 'player1', -1, 'player2')">
+            -
+          </button>
+          <button onclick="updateScore('score2', 'player1', 1, 'player2')">
+            +
+          </button>
+        </div>
+      </div>
+      <p id="winner" class="winner"></p>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

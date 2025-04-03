@@ -6,20 +6,22 @@ document.addEventListener("DOMContentLoaded", () => {
     updateServeIndicatorForPlayer1();
 
     // Wiederherstellen der gespeicherten Spielernamen
-    let player1Name = localStorage.getItem('player1-name') || "Spieler 1";
-    let player2Name = localStorage.getItem('player2-name') || "Spieler 2";
-    document.querySelector('#player1 .player-name').value = player1Name;
-    document.querySelector('#player2 .player-name').value = player2Name;
+    let player1Name = localStorage.getItem("player1-name") || "Spieler 1";
+    let player2Name = localStorage.getItem("player2-name") || "Spieler 2";
+    document.querySelector("#player1 .player-name").value = player1Name;
+    document.querySelector("#player2 .player-name").value = player2Name;
 });
 
 function updatePlayerName(playerId, newName) {
     // Speichere den neuen Namen im localStorage
-    localStorage.setItem(playerId + '-name', newName);
+    localStorage.setItem(playerId + "-name", newName);
 }
 
 function updateScore(scoreId, opponentId, change, scorer) {
     let scoreElement = document.getElementById(scoreId);
-    let opponentScoreElement = document.getElementById(opponentId === "player1" ? "score1" : "score2");
+    let opponentScoreElement = document.getElementById(
+        opponentId === "player1" ? "score1" : "score2"
+    );
     let score = parseInt(scoreElement.innerText, 10);
     let opponentScore = parseInt(opponentScoreElement.innerText, 10);
 
@@ -44,13 +46,16 @@ function updateScore(scoreId, opponentId, change, scorer) {
         updateServeIndicatorForPlayer1();
     }
 
-    if (score >= 21 && (score - opponentScore) >= 2) {
+    if (score >= 21 && score - opponentScore >= 2) {
         // Gewinnnachricht mit dem Namen des Spielers
-        let winnerName = scoreId === "score1" 
-            ? document.querySelector('#player1 .player-name').value 
-            : document.querySelector('#player2 .player-name').value;
-        
-        document.getElementById("winner").innerText = `${winnerName} hat den Satz gewonnen!`;
+        let winnerName =
+            scoreId === "score1"
+                ? document.querySelector("#player1 .player-name").value
+                : document.querySelector("#player2 .player-name").value;
+
+        document.getElementById(
+            "winner"
+        ).innerText = `${winnerName} hat den Satz gewonnen!`;
         disableButtons();
 
         if (scoreId === "score1") {
@@ -63,7 +68,9 @@ function updateScore(scoreId, opponentId, change, scorer) {
 
         if (setCounts.player1 === 2 || setCounts.player2 === 2) {
             // Gewinnnachricht für das gesamte Spiel
-            document.getElementById("winner").innerText = `${winnerName} hat das Spiel gewonnen!`;
+            document.getElementById(
+                "winner"
+            ).innerText = `${winnerName} hat das Spiel gewonnen!`;
             setTimeout(() => {
                 fullResetGame();
             }, 4000);
@@ -79,7 +86,10 @@ function updateServeIndicatorForPlayer2() {
     let serveIndicator = document.getElementById("serve1");
     serveIndicator.innerText = "-";
 
-    let opponentScore = parseInt(document.getElementById("score1").innerText, 10);
+    let opponentScore = parseInt(
+        document.getElementById("score1").innerText,
+        10
+    );
     serveIndicator = document.getElementById("serve2");
 
     if (opponentScore % 2 === 0) {
@@ -95,7 +105,10 @@ function updateServeIndicatorForPlayer1() {
     let serveIndicator = document.getElementById("serve2");
     serveIndicator.innerText = "-";
 
-    let opponentScore = parseInt(document.getElementById("score2").innerText, 10);
+    let opponentScore = parseInt(
+        document.getElementById("score2").innerText,
+        10
+    );
     serveIndicator = document.getElementById("serve1");
 
     if (opponentScore % 2 === 0) {
@@ -109,11 +122,13 @@ function updateServeIndicatorForPlayer1() {
 
 function disableButtons() {
     let buttons = document.querySelectorAll("button");
-    buttons.forEach(button => button.disabled = true);
+    buttons.forEach((button) => (button.disabled = true));
 }
 
 function updateSetCounter(playerId, setCount) {
-    let setCircles = document.querySelectorAll(`#${playerId} .set-counter .set-circle`);
+    let setCircles = document.querySelectorAll(
+        `#${playerId} .set-counter .set-circle`
+    );
     setCircles.forEach((circle, index) => {
         if (index < setCount) {
             circle.classList.add("filled");
@@ -128,7 +143,7 @@ function resetGame() {
     document.getElementById("score2").innerText = "0";
     document.getElementById("winner").innerText = "";
     let buttons = document.querySelectorAll("button");
-    buttons.forEach(button => button.disabled = false);
+    buttons.forEach((button) => (button.disabled = false));
     currentServer = "player1";
     document.getElementById("player1").classList.add("active");
     document.getElementById("player2").classList.remove("active");
@@ -141,7 +156,7 @@ function fullResetGame() {
     document.getElementById("score2").innerText = "0";
     document.getElementById("winner").innerText = "";
     let buttons = document.querySelectorAll("button");
-    buttons.forEach(button => button.disabled = false);
+    buttons.forEach((button) => (button.disabled = false));
 
     // Setze die Satzzähler zurück
     setCounts.player1 = 0;
@@ -158,27 +173,30 @@ function fullResetGame() {
     updateServeIndicatorForPlayer1();
 }
 
-document.querySelector('.switcher-btn').onclick = () =>{
-    document.querySelector('.theme-switcher').classList.toggle('active');
+document.querySelector(".switcher-btn").onclick = () => {
+    document.querySelector(".theme-switcher").classList.toggle("active");
 };
 
-let themeButtons = document.querySelectorAll('.theme-buttons');
+let themeButtons = document.querySelectorAll(".theme-buttons");
 
-themeButtons.forEach(color =>{
-    color.addEventListener('click', () =>{
-        let dataColor= color.getAttribute('data-color')
-        document.querySelector(':root').style.setProperty('--main-color',dataColor);
+themeButtons.forEach((color) => {
+    color.addEventListener("click", () => {
+        let dataColor = color.getAttribute("data-color");
+        document
+            .querySelector(":root")
+            .style.setProperty("--main-color", dataColor);
 
-          // Speichert die ausgewählte Farbe im localStorage
-          localStorage.setItem('selectedColor', dataColor);
+        // Speichert die ausgewählte Farbe im localStorage
+        localStorage.setItem("selectedColor", dataColor);
     });
-
 });
 
 // Beim Laden der Seite die gespeicherte Farbe anwenden
-window.addEventListener('DOMContentLoaded', () => {
-    let savedColor = localStorage.getItem('selectedColor');
+window.addEventListener("DOMContentLoaded", () => {
+    let savedColor = localStorage.getItem("selectedColor");
     if (savedColor) {
-        document.querySelector(':root').style.setProperty('--main-color', savedColor);
+        document
+            .querySelector(":root")
+            .style.setProperty("--main-color", savedColor);
     }
 });
